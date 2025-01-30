@@ -1,7 +1,6 @@
 // Problem Link - https://codeforces.com/problemset/problem/59/A
 
 #include <iostream>
-#include <cctype>
 using namespace std;
 
 int main() {
