@@ -4,26 +4,10 @@
 #include <cctype>
 using namespace std;
 
-string lower(string s){
-    string n_s;
-    for (int i = 0;i < s.length(); i++){
-        n_s += tolower(s[i]);
-    }
-    return n_s;
-}
-
-string upper(string s){
-    string n_s;
-    for (int i = 0;i < s.length(); i++){
-        n_s += toupper(s[i]);
-    }
-    return n_s;
-}
-
 int main() {
     int low_c = 0;
     int up_c = 0;
-    string s;
+    string s, n_s;
     cin >> s;
     for (int i = 0; i < s.length(); i++){
         if (islower(s[i])){
@@ -33,13 +17,14 @@ int main() {
             up_c++;
         }
     }
-    if (up_c > low_c){
-        cout << upper(s);
+    for(int i = 0; i < s.length(); i++){
+       if (low_c > up_c || low_c == up_c){
+        n_s += tolower(s[i]);
+       }
+       else{
+        n_s += toupper(s[i]);
+       }
     }
-    else if (low_c > up_c){
-        cout << lower(s);
-    }
-    else{
-       cout << lower(s);
-    }
+
+    cout << n_s;
 }
